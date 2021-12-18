@@ -18,6 +18,7 @@
                     {{ form.beds(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+            <br>
             <div class="form-group">
                 {{ form.month_posted.label(class="form-control-label") }}
                 {% if form.month_posted.errors %}
@@ -31,6 +32,7 @@
                     {{ form.month_posted(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+            <br>
             <div class="form-group">
                 {{ form.icu.label(class="form-control-label") }}
                 {% if form.icu.errors %}
@@ -44,6 +46,7 @@
                     {{ form.icu(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+            <br>
             <div class="form-group">
                 {{ form.oxygen.label(class="form-control-label") }}
                 {% if form.oxygen.errors %}
@@ -57,10 +60,13 @@
                     {{ form.oxygen(class="form-control form-control-lg") }}
                 {% endif %}
             </div>
+            <br>
         </fieldset>
+        <br>
         <div class="form-group">
             {{ form.submit(class="btn btn-outline-info") }}
         </div>
+        <br>
     </form>
 </div>
 {% endblock content %}

@@ -16,4 +16,4 @@ class DataForm(FlaskForm):
     oxygen = StringField('Number of oxygen cylinders required', validators=[DataRequired()])
     icu = StringField('Number of icu required', validators=[DataRequired()])
     month_posted = StringField('Month Posted', validators=[DataRequired()])
-    submit = SubmitField('Post')
+    submit = SubmitField('Submit')

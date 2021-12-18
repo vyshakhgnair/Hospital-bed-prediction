@@ -1,8 +1,17 @@
 {% extends 'layout.html' %}
 {% block content %}
+<div class="content-section">
     <h1>Predictions for this month</h1>
+    <div class="d-flex justify-content-center align-items-center">
+        <img src="{{ url_for('static', filename='assets/predictions.png') }}" class="card-img-top" style="width: 500px;">
+    </div>
     <br>
+    <br>
+    <div class="predictions">
     <h3>No. of beds required : {{ data.beds }}</h3>
     <h3>No. of oxygen cylinders required : {{ data.oxygen }}</h3>
     <h3>No. of icu required : {{ data.icu }}</h3>
+    </div>
+    <br>
+</div>
 {% endblock content %}

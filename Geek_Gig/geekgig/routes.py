@@ -6,6 +6,7 @@ from geekgig import app, db, bcrypt
 from geekgig.forms import LoginForm, DataForm
 from geekgig.models import Admin, Supplier, DataA, DataS
 from flask_login import login_user, logout_user, current_user, login_required
+from geekgig.mean import mean_bed, mean_icu, mean_oxygen
 
 @app.route("/")
 @app.route("/home")
@@ -50,11 +51,11 @@ def supplierLogin():
 def adminDash():
     form = DataForm()
     if form.validate_on_submit():
-        data = DataA(beds=form.beds.data, oxygen=form.oxygen.data, icu=form.icu.data, month_posted=form.month_posted.data, admin=current_user)
+        data = DataA(beds=mean_bed, oxygen=mean_oxygen, icu=mean_icu, month_posted=form.month_posted.data, admin=current_user)
         db.session.add(data)
         db.session.commit()
         flash('Your data has been entered!', 'success')
-        return redirect(url_for('home'))
+        return redirect(url_for('supplierDash'))
     return render_template('adminDash.html', form=form, title='Admin Dashboard')
 
 @app.route("/supplier/dashboard")
