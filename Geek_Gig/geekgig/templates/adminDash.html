@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="content-section">
+    <form method="post" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Enter monthly data</legend>
+            <div class="form-group">
+                {{ form.beds.label(class="form-control-label") }}
+                {% if form.beds.errors %}
+                {{ form.beds(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.beds.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.beds(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <br>
+            <div class="form-group">
+                {{ form.month_posted.label(class="form-control-label") }}
+                {% if form.month_posted.errors %}
+                {{ form.month_posted(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.month_posted.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.month_posted(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <br>
+            <div class="form-group">
+                {{ form.icu.label(class="form-control-label") }}
+                {% if form.icu.errors %}
+                {{ form.icu(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.icu.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.icu(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <br>
+            <div class="form-group">
+                {{ form.oxygen.label(class="form-control-label") }}
+                {% if form.oxygen.errors %}
+                {{ form.oxygen(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.oxygen.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.oxygen(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <br>
+        </fieldset>
+        <br>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+        <br>
+    </form>
+</div>
+{% endblock content %}
